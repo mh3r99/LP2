@@ -1,0 +1,154 @@
+.contact {
+  padding: 100px 0;
+  background: #fff;
+  @include for-size(all) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @include for-size(phone) {
+    padding: 40px 10px;
+  }
+  &__wrap {
+    margin-top: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include for-size(tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @include for-size(phone) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    @include for-size(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+    li {
+      padding-left: 29px;
+      margin-bottom: 35px;
+      position: relative;
+      @include for-size(tablet) {
+        margin: 0 5px 35px;
+      }
+      &::before {
+        font-size: 17px;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      &:nth-child(1)::before {
+        content: "\f3c5";
+      }
+      &:nth-child(2)::before {
+        content: "\f3cd";
+      }
+      &:nth-child(3)::before {
+        content: "\f0e0";
+        font-weight: 400;
+      }
+    }
+  }
+  .list__title {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .list__descr {
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 20px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  &__form {
+    padding-right: 15px;
+    width: 64%;
+    @include for-size(phone) {
+      padding: 0;
+      width: 100%;
+    }
+    &-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &-input {
+      margin-bottom: 21px;
+      padding-left: 16px;
+      max-width: 350px;
+      width: 100%;
+      height: 44px;
+      font-size: 12px;
+      border: 1px solid $primary;
+      outline: none;
+      &:focus {
+        border: 1px solid $accent;
+      }
+      @include for-size(laptop) {
+        max-width: 100%;
+      }
+      @include for-size(tablet) {
+        max-width: 100%;
+      }
+      @include for-size(phone) {
+        max-width: 100%;
+      }
+    }
+    textarea {
+      margin-bottom: 21px;
+      padding-left: 16px;
+      padding-top: 16px;
+      width: 100%;
+      height: 104px;
+      font-size: 12px;
+      border: 1px solid $primary;
+      outline: none;
+      resize: none;
+      &:focus {
+        border: 1px solid $accent;
+      }
+    }
+    &-btn {
+      padding: 15px 35px;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: inherit;
+      text-align: center;
+      text-transform: uppercase;
+      background: transparent;
+      outline: none;
+      border: 1px solid $primary;
+      cursor: pointer;
+      transition: 0.3s all;
+      &:hover {
+        color: #fff;
+        border-color: #fff;
+        background-color: $accent;
+      }
+    }
+    &-info {
+      margin-left: 35px;
+      font-size: 12px;
+      span {
+        color: $accent;
+      }
+      @include for-size(tablet) {
+        display: block;
+        margin: 5px 0;
+      }
+      @include for-size(phone) {
+        display: block;
+        margin: 5px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.about {
+  padding: 100px 0;
+  background-color: #f8f8f8;
+  @include for-size(phone) {
+    padding: 40px 10px;
+  }
+  @include for-size(all) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  &__content {
+    margin-top: 68px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include for-size(phone) {
+      text-align: justify;
+    }
+  }
+  &__left,
+  &__right {
+    width: 100%;
+    max-width: 555px;
+    min-width: 320px;
+    font-size: 14px;
+    @include for-size(laptop) {
+      margin-bottom: 15px;
+      max-width: 100%;
+    }
+    @include for-size(tablet) {
+      margin-bottom: 15px;
+      max-width: 100%;
+    }
+    @include for-size(phone) {
+      margin-bottom: 15px;
+      max-width: 100%;
+      min-width: unset;
+    }
+  }
+  &__slider {
+    margin-top: 70px;
+    overflow: hidden;
+  }
+  .slick-list {
+    margin: 0 -15px;
+  }
+  .slick-prev,
+  .slick-next {
+    width: 35px;
+    height: 38px;
+    position: absolute;
+    top: 35%;
+    background-color: #8e8e8e;
+    color: #ddd;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    z-index: 999;
+    transition: 0.3s all;
+    &:hover {
+      background-color: $accent;
+    }
+  }
+  .slick-prev {
+    left: 0;
+  }
+  .slick-next {
+    right: 0;
+  }
+  &__item {
+    margin: 0 15px;
+    text-align: center;
+    &_img {
+      max-width: 263px;
+      margin: 0 auto;
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: rgba(rgb(95, 95, 95), 0.6);
+        transition: 0.3s all;
+      }
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+        .about__item_social {
+          opacity: 1;
+        }
+      }
+    }
+    &_social {
+      display: flex;
+      list-style: none;
+      position: absolute;
+      z-index: 2;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      a {
+        color: #fff;
+        text-decoration: none;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s all;
+        &:hover {
+          background-color: $accent;
+        }
+      }
+    }
+    &_descr {
+      margin-top: 20px;
+    }
+    &_name {
+      font-weight: 100;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    &_spec {
+      margin-top: 15px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+}

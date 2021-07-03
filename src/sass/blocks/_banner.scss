@@ -1,0 +1,54 @@
+.banner {
+  height: 369px;
+  background: linear-gradient(rgba($accent, 0.7), rgba($accent, 0.7)),
+    url("../img/works-bg.jpg") no-repeat center/cover;
+  @include for-size(all) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @include for-size(phone) {
+    padding: 40px 10px;
+    height: auto;
+  }
+  &__wrap {
+    margin: 0 auto;
+    padding-top: 100px;
+    max-width: 461px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    @include for-size(phone) {
+      padding-top: 0;
+    }
+  }
+  &__title {
+    margin-bottom: 50px;
+    font-size: 30px;
+    line-height: 44px;
+    @include for-size(phone) {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+  &__btn {
+    padding: 16px 25px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s all;
+    &:hover {
+      color: $accent;
+      background-color: #fff;
+    }
+    @include for-size(phone) {
+      padding: 12px 19px;
+      font-size: 15px;
+    }
+  }
+}

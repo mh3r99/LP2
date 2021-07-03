@@ -1,0 +1,27 @@
+@mixin for-size($size) {
+  @if $size==phone {
+    @media (min-width: 280px) and (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $size==tablet {
+    @media (min-width: 600px) and (max-width: 900px) {
+      @content;
+    }
+  }
+  @if $size==laptop {
+    @media (min-width: 900px) and (max-width: 1200px) {
+      @content;
+    }
+  }
+  @if $size==desktop {
+    @media (min-width: 1200px) and (max-width: 1800px) {
+      @content;
+    }
+  }
+  @if $size==all {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}

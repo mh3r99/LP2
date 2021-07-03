@@ -1,0 +1,59 @@
+.footer {
+  padding: 84px 0;
+  background-color: $accent;
+  @include for-size(all) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  @include for-size(tablet) {
+    padding: 40px 10px;
+  }
+  @include for-size(phone) {
+    padding: 10px;
+  }
+  &__wrap {
+    padding: 16px 0;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__social {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background-color: #fff;
+    }
+  }
+  &__link {
+    margin: 0 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s all;
+    &:hover {
+      background-color: #fff;
+      color: $accent;
+    }
+  }
+  &__copyright {
+    margin-top: 60px;
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+}
